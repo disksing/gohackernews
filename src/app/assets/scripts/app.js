@@ -11,7 +11,7 @@ function ActivateMethodLinks() {
   DOM.On('a[method="post"], a[method="delete"]', 'click', function(e) {
     // Confirm action before delete
     if (this.getAttribute('method') == 'delete') {
-      if (!confirm('Are you sure you want to delete this item, this action cannot be undone?')) {
+      if (!confirm('此操作不可撤销，是否确认删除？')) {
         return false;
       }
     }

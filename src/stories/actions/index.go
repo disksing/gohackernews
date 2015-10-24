@@ -149,7 +149,7 @@ func HandleIndex(context router.Context) error {
 	setStoriesMetadata(view, context.Request())
 	view.AddKey("page", page)
 	view.AddKey("stories", results)
-	view.AddKey("meta_title", "Golang News links")
+	view.AddKey("meta_title", "最新动态")
 
 	if context.Param("format") == ".xml" {
 		view.Layout("")
@@ -162,9 +162,9 @@ func HandleIndex(context router.Context) error {
 
 func setStoriesMetadata(view *view.Renderer, request *http.Request) {
 	view.AddKey("pubdate", time.Now()) // could use latest story date instead?
-	view.AddKey("meta_title", "Golang News")
-	view.AddKey("meta_desc", "News for Go Hackers, in the style of Hacker News. A curated selection of the latest links about the Go programming language.")
-	view.AddKey("meta_keywords", "golang news, blog, links, go developers, go web apps, web applications, fragmenta")
+	view.AddKey("meta_title", "游戏圈儿")
+	view.AddKey("meta_desc", "最新最热的游戏圈动态")
+	view.AddKey("meta_keywords", "游戏, 游戏开发, 新游戏, 游戏策划, 游戏运营, 游戏上线")
 
 	p := strings.Replace(request.URL.Path, ".xml", "", 1)
 	if p == "/" {

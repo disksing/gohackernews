@@ -2,16 +2,16 @@
 
   <div class="actions">
     {{ if .current_user.Admin }}
-     <a href="/users/{{.user.Id}}/update" class="button grey">edit</a>
+     <a href="/users/{{.user.Id}}/update" class="button grey">编辑</a>
     {{end }}
     {{ if eq .current_user.Id .user.Id }}
-      <a class="button grey" href="/users/logout" method="post">Logout</a>
+      <a class="button grey" href="/users/logout" method="post">登出</a>
     {{ end }}
   </div>
   
   <div class="name">
     <h1>{{.user.Name}} ({{.user.Points}})</h1>
-    <p>Signed up {{timeago .user.CreatedAt}}</p>
+    <p>注册于 {{timeago .user.CreatedAt}}</p>
   </div>
 
   <div class="profile">

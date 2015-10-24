@@ -1,12 +1,12 @@
 <section class="narrow">
 
 <form action="/users/login" method="post">
-    <h1>Login</h1>
-    {{ field "Email or Username" "email" "" "text" }}
-    {{ field "Password" "password" "" "password" "type=password" }}
+    <h1>登录</h1>
+    {{ field "用户名 / 邮箱" "email" "" "text" }}
+    {{ field "密码" "password" "" "password" "type=password" }}
 
     <div class="actions">
-        <input type="submit" class="button" value="Login">
+        <input type="submit" class="button" value="登入">
     </div>
 </form>
 </section>
