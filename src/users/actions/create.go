@@ -44,7 +44,7 @@ func HandleCreate(context router.Context) error {
 	if len(email) > 0 {
 
 		if len(email) < 3 || !strings.Contains(email, "@") {
-			return router.InternalError(err, "Invalid email", "Please just miss out the email field, or use a valid email.")
+			return router.InternalError(err, "邮箱格式不正确", "请填入正确的邮箱，或者留空。")
 		}
 
 		count, err := users.Query().Where("email=?", email).Count()
@@ -52,14 +52,14 @@ func HandleCreate(context router.Context) error {
 			return router.InternalError(err)
 		}
 		if count > 0 {
-			return router.NotAuthorizedError(err, "User already exists", "Sorry, a user already exists with that email.")
+			return router.NotAuthorizedError(err, "已注册过的邮箱", "抱歉，该邮箱已经被使用。")
 		}
 	}
 
 	// Check for invalid or duplicate names
 	name := params.Get("name")
 	if len(name) < 2 {
-		return router.InternalError(err, "Name too short", "Please choose a username longer than 2 characters")
+		return router.InternalError(err, "用户名过短", "请输入至少2字符。")
 	}
 
 	count, err := users.Query().Where("name=?", name).Count()
@@ -67,7 +67,7 @@ func HandleCreate(context router.Context) error {
 		return router.InternalError(err)
 	}
 	if count > 0 {
-		return router.NotAuthorizedError(err, "User already exists", "Sorry, a user already exists with that name, please choose another.")
+		return router.NotAuthorizedError(err, "用户名被占用", "抱歉，该用户名已经被占用，请选择其他用户名。")
 	}
 
 	// Set some defaults for the new user
@@ -75,10 +75,12 @@ func HandleCreate(context router.Context) error {
 	params.SetInt("role", users.RoleReader)
 	params.SetInt("points", 1)
 
+	allows := append(users.AllowedParams(), "status", "role", "points")
+
 	// Now try to create the user
-	id, err := users.Create(params.Clean(users.AllowedParams()))
+	id, err := users.Create(params.Clean(allows))
 	if err != nil {
-		return router.InternalError(err, "Error", "Sorry, an error occurred creating the user record.")
+		return router.InternalError(err, "错误", "创建用户记录的过程中发生错误。")
 	}
 
 	context.Logf("#info Created user id,%d", id)

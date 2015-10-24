@@ -2,6 +2,8 @@
   {{if .meta_rss }}
   <a href="{{ .meta_rss }}">RSS</a> |
   {{ end }}
-  <a href="https://twitter.com/gohackernews">Twitter</a> |
-  <a href="http://fragmenta.eu">Made with Fragmenta</a>
+  <a href="/about">关于</a>
+</p>
+<p>
+  感谢 <a href="https://github.com/kennygrant/gohackernews">gohackernews</a> 项目
 </p>
