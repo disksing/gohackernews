@@ -1,11 +1,10 @@
 package commentactions
 
 import (
+	"github.com/disksing/gohackernews/src/comments"
+	"github.com/disksing/gohackernews/src/lib/authorise"
 	"github.com/fragmenta/router"
 	"github.com/fragmenta/view"
-
-	"github.com/kennygrant/gohackernews/src/comments"
-	"github.com/kennygrant/gohackernews/src/lib/authorise"
 )
 
 // HandleUpdateShow responds to GET /comments/update with the form to update a comment

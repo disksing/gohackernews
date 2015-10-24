@@ -1,11 +1,10 @@
 package storyactions
 
 import (
+	"github.com/disksing/gohackernews/src/lib/authorise"
+	"github.com/disksing/gohackernews/src/stories"
 	"github.com/fragmenta/router"
 	"github.com/fragmenta/view"
-
-	"github.com/kennygrant/gohackernews/src/lib/authorise"
-	"github.com/kennygrant/gohackernews/src/stories"
 )
 
 const (

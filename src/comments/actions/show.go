@@ -1,10 +1,9 @@
 package commentactions
 
 import (
+	"github.com/disksing/gohackernews/src/comments"
 	"github.com/fragmenta/router"
 	"github.com/fragmenta/view"
-
-	"github.com/kennygrant/gohackernews/src/comments"
 )
 
 // HandleShow displays a single comment

@@ -1,10 +1,9 @@
 package useractions
 
 import (
+	"github.com/disksing/gohackernews/src/lib/authorise"
+	"github.com/disksing/gohackernews/src/users"
 	"github.com/fragmenta/router"
-
-	"github.com/kennygrant/gohackernews/src/lib/authorise"
-	"github.com/kennygrant/gohackernews/src/users"
 )
 
 // HandleDestroy responds to POST /users/1/destroy

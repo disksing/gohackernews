@@ -3,12 +3,11 @@ package useractions
 import (
 	"fmt"
 
+	"github.com/disksing/gohackernews/src/lib/authorise"
+	"github.com/disksing/gohackernews/src/users"
 	"github.com/fragmenta/auth"
 	"github.com/fragmenta/router"
 	"github.com/fragmenta/view"
-
-	"github.com/kennygrant/gohackernews/src/lib/authorise"
-	"github.com/kennygrant/gohackernews/src/users"
 )
 
 // HandleLoginShow shows the page at /users/login

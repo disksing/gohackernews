@@ -6,10 +6,9 @@ import (
 	"strings"
 	"time"
 
+	"github.com/disksing/gohackernews/src/stories"
 	"github.com/fragmenta/router"
 	"github.com/fragmenta/view"
-
-	"github.com/kennygrant/gohackernews/src/stories"
 )
 
 const listLimit = 100

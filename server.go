@@ -4,9 +4,8 @@ package main
 import (
 	"fmt"
 
+	"github.com/disksing/gohackernews/src/app"
 	"github.com/fragmenta/server"
-
-	"github.com/kennygrant/gohackernews/src/app"
 )
 
 func main() {

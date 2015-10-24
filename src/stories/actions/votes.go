@@ -3,12 +3,11 @@ package storyactions
 import (
 	"fmt"
 
+	"github.com/disksing/gohackernews/src/lib/authorise"
+	"github.com/disksing/gohackernews/src/stories"
+	"github.com/disksing/gohackernews/src/users"
 	"github.com/fragmenta/query"
 	"github.com/fragmenta/router"
-
-	"github.com/kennygrant/gohackernews/src/lib/authorise"
-	"github.com/kennygrant/gohackernews/src/stories"
-	"github.com/kennygrant/gohackernews/src/users"
 )
 
 // HandleFlag handles POST to /stories/123/flag

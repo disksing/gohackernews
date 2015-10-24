@@ -1,11 +1,10 @@
 package useractions
 
 import (
+	"github.com/disksing/gohackernews/src/lib/authorise"
+	"github.com/disksing/gohackernews/src/users"
 	"github.com/fragmenta/router"
 	"github.com/fragmenta/view"
-
-	"github.com/kennygrant/gohackernews/src/lib/authorise"
-	"github.com/kennygrant/gohackernews/src/users"
 )
 
 // HandleUpdateShow serves a get request at /users/1/update (show form to update)

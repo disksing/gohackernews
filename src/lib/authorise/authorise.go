@@ -4,11 +4,10 @@ import (
 	"fmt"
 	"strings"
 
+	"github.com/disksing/gohackernews/src/users"
 	"github.com/fragmenta/auth"
 	"github.com/fragmenta/router"
 	"github.com/fragmenta/server"
-
-	"github.com/kennygrant/gohackernews/src/users"
 )
 
 // ResourceModel defines the interface for models passed to authorise.Resource

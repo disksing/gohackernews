@@ -1,10 +1,10 @@
 package app
 
 import (
+	"github.com/disksing/gohackernews/src/comments/actions"
+	"github.com/disksing/gohackernews/src/stories/actions"
+	"github.com/disksing/gohackernews/src/users/actions"
 	"github.com/fragmenta/router"
-	"github.com/kennygrant/gohackernews/src/comments/actions"
-	"github.com/kennygrant/gohackernews/src/stories/actions"
-	"github.com/kennygrant/gohackernews/src/users/actions"
 )
 
 // Define routes for this app

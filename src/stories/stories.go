@@ -6,12 +6,11 @@ import (
 	"strings"
 	"time"
 
+	"github.com/disksing/gohackernews/src/lib/status"
 	"github.com/fragmenta/model"
 	"github.com/fragmenta/model/validate"
 	"github.com/fragmenta/query"
 	"github.com/fragmenta/router"
-
-	"github.com/kennygrant/gohackernews/src/lib/status"
 )
 
 // Story handles saving and retreiving stories from the database

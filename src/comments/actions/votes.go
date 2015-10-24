@@ -3,12 +3,11 @@ package commentactions
 import (
 	"fmt"
 
+	"github.com/disksing/gohackernews/src/comments"
+	"github.com/disksing/gohackernews/src/lib/authorise"
+	"github.com/disksing/gohackernews/src/users"
 	"github.com/fragmenta/query"
 	"github.com/fragmenta/router"
-
-	"github.com/kennygrant/gohackernews/src/comments"
-	"github.com/kennygrant/gohackernews/src/lib/authorise"
-	"github.com/kennygrant/gohackernews/src/users"
 )
 
 // HandleFlag handles POST to /comments/123/flag

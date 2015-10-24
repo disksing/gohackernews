@@ -3,12 +3,11 @@ package useractions
 import (
 	"strings"
 
+	"github.com/disksing/gohackernews/src/lib/authorise"
+	"github.com/disksing/gohackernews/src/lib/status"
+	"github.com/disksing/gohackernews/src/users"
 	"github.com/fragmenta/router"
 	"github.com/fragmenta/view"
-
-	"github.com/kennygrant/gohackernews/src/lib/authorise"
-	"github.com/kennygrant/gohackernews/src/lib/status"
-	"github.com/kennygrant/gohackernews/src/users"
 )
 
 // HandleCreateShow handles GET /users/create

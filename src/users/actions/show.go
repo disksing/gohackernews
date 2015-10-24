@@ -1,12 +1,11 @@
 package useractions
 
 import (
+	"github.com/disksing/gohackernews/src/comments"
+	"github.com/disksing/gohackernews/src/stories"
+	"github.com/disksing/gohackernews/src/users"
 	"github.com/fragmenta/router"
 	"github.com/fragmenta/view"
-
-	"github.com/kennygrant/gohackernews/src/comments"
-	"github.com/kennygrant/gohackernews/src/stories"
-	"github.com/kennygrant/gohackernews/src/users"
 )
 
 // HandleShow serve a get request at /users/1

@@ -6,11 +6,10 @@ import (
 	"strings"
 	"time"
 
+	"github.com/disksing/gohackernews/src/lib/status"
 	"github.com/fragmenta/model"
 	"github.com/fragmenta/model/validate"
 	"github.com/fragmenta/query"
-
-	"github.com/kennygrant/gohackernews/src/lib/status"
 )
 
 // Need rank on comments too? rank desc,

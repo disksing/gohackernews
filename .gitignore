@@ -8,3 +8,4 @@ src/app/assets/scripts/analytics.js
 # Ignore new assets in public assets dir (generated files)
 public/assets
 
+2015-10-24-040022-Create-Database.sql

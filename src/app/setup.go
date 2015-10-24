@@ -6,6 +6,7 @@ import (
 	"strings"
 	"time"
 
+	"github.com/disksing/gohackernews/src/lib/authorise"
 	"github.com/fragmenta/assets"
 	"github.com/fragmenta/query"
 	"github.com/fragmenta/router"
@@ -13,8 +14,6 @@ import (
 	"github.com/fragmenta/server/log"
 	"github.com/fragmenta/view"
 	"github.com/fragmenta/view/helpers"
-
-	"github.com/kennygrant/gohackernews/src/lib/authorise"
 )
 
 // appAssets holds a reference to our assets for use in asset setup

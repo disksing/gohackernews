@@ -3,10 +3,9 @@ package commentactions
 import (
 	"strings"
 
+	"github.com/disksing/gohackernews/src/comments"
 	"github.com/fragmenta/router"
 	"github.com/fragmenta/view"
-
-	"github.com/kennygrant/gohackernews/src/comments"
 )
 
 // HandleIndex displays a list of comments

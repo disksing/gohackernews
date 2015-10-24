@@ -3,12 +3,11 @@ package commentactions
 import (
 	"fmt"
 
+	"github.com/disksing/gohackernews/src/comments"
+	"github.com/disksing/gohackernews/src/lib/authorise"
+	"github.com/disksing/gohackernews/src/stories"
 	"github.com/fragmenta/router"
 	"github.com/fragmenta/view"
-
-	"github.com/kennygrant/gohackernews/src/comments"
-	"github.com/kennygrant/gohackernews/src/lib/authorise"
-	"github.com/kennygrant/gohackernews/src/stories"
 )
 
 // HandleCreateShow serves the create form via GET for comments
