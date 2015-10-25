@@ -221,28 +221,28 @@ func (m *Story) ListURL() string {
 // Code returns true if this is a link to a git repository
 // At present we only check for github urls, we should at least check for bitbucket
 func (m *Story) Code() bool {
-	if strings.Contains(m.Url, "https://github.com") {
-		if strings.Contains(m.Url, "/commit/") || strings.HasSuffix(m.Url, ".md") {
-			return false
-		}
-		return true
-	}
+	// if strings.Contains(m.Url, "https://github.com") {
+	// 	if strings.Contains(m.Url, "/commit/") || strings.HasSuffix(m.Url, ".md") {
+	// 		return false
+	// 	}
+	// 	return true
+	// }
 	return false
 }
 
 // GodocURL returns the godoc.org URL for this story, or empty string if none
 func (m *Story) GodocURL() string {
-	if m.Code() {
-		return strings.Replace(m.Url, "https://github.com", "https://godoc.org/github.com", 1)
-	}
+	// if m.Code() {
+	// 	return strings.Replace(m.Url, "https://github.com", "https://godoc.org/github.com", 1)
+	// }
 	return ""
 }
 
 // VetURL returns a URL for goreportcard.com, for code repos
 func (m *Story) VetURL() string {
-	if m.Code() {
-		return strings.Replace(m.Url, "https://github.com/", "http://goreportcard.com/report/", 1)
-	}
+	// if m.Code() {
+	// 	return strings.Replace(m.Url, "https://github.com/", "http://goreportcard.com/report/", 1)
+	// }
 	return ""
 }
 
@@ -257,9 +257,9 @@ func (m *Story) CommentCountDisplay() string {
 // NameDisplay returns a title string without hashtags (assumed to be at the end),
 // by truncating the title at the first #
 func (m *Story) NameDisplay() string {
-	if strings.Contains(m.Name, "#") {
-		return m.Name[0:strings.Index(m.Name, "#")]
-	}
+	// if strings.Contains(m.Name, "#") {
+	// 	return m.Name[0:strings.Index(m.Name, "#")]
+	// }
 	return m.Name
 }
 
@@ -267,10 +267,10 @@ func (m *Story) NameDisplay() string {
 // TODO: for speed and clarity we could extract at submit time instead and store in db
 func (m *Story) Tags() []string {
 	var tags []string
-	if strings.Contains(m.Name, "#") {
-		// split on " #"
-		parts := strings.Split(m.Name, " #")
-		tags = parts[1:]
-	}
+	// if strings.Contains(m.Name, "#") {
+	// 	// split on " #"
+	// 	parts := strings.Split(m.Name, " #")
+	// 	tags = parts[1:]
+	// }
 	return tags
 }

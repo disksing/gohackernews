@@ -114,21 +114,13 @@ func timeago(d time.Time) string {
 
 	switch {
 	case duration < time.Minute:
-		return fmt.Sprintf("%d seconds ago", duration/time.Second)
+		return fmt.Sprintf("%d秒前", duration/time.Second)
 	case duration < time.Hour:
-		return fmt.Sprintf("%d minutes ago", duration/time.Minute)
+		return fmt.Sprintf("%d分钟前", duration/time.Minute)
 	case duration < time.Hour*24:
-		unit := "hour"
-		if hours > 1 {
-			unit = "hours"
-		}
-		return fmt.Sprintf("%d %s ago", hours, unit)
+		return fmt.Sprintf("%d小时前", hours)
 	default:
-		unit := "day"
-		if hours > 48 {
-			unit = "days"
-		}
-		return fmt.Sprintf("%d %s ago", hours/24, unit)
+		return fmt.Sprintf("%d天前", hours/24)
 	}
 
 }

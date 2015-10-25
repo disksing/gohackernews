@@ -6,7 +6,7 @@
      {{ template "stories/views/row.html.got" $0 }}
   {{ end }}
   {{ if eq (len .stories) 100 }}
-  <li class="more_link story"><a href="?page={{add .page 1 }}">Show More</a></li>
+  <li class="more_link story"><a href="?page={{add .page 1 }}">显示更多</a></li>
   {{ end }}
 </ul>
 </article>
