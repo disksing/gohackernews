@@ -9,7 +9,7 @@
     {{ range .stories }}
     <item>
       <title>{{  .Name }}</title>
-      <description>{{ if exists .Summary }}{{ .Summary }}{{ end }} {{ .Points }} points posted by {{.UserName}} </description>
+      <description>{{ if exists .Summary }}{{ .Summary }}{{ end }} ({{ .Points }}) {{.UserName}} </description>
       <link>{{  .DestinationURL }}</link>
       <guid>{{ .Id }}</guid>
       <pubDate>{{ date .CreatedAt.UTC "Mon, 02 Jan 2006 15:04:00 +0000" }}</pubDate>

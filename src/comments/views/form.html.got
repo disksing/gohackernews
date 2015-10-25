@@ -9,8 +9,8 @@
     
     
     <div class="actions clear">
-        <input type="submit" class="button" value="Save">
-        <a class="button grey" method="back">Cancel</a>
+        <input type="submit" class="button" value="保存">
+        <a class="button grey" method="back">取消</a>
     </div>
 
     <input name="authenticity_token" type="hidden" value="{{.authenticity_token}}">

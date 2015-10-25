@@ -1,9 +1,9 @@
 <form class="add-comment {{if not .comment.Id}}add-comment-root{{end}}" action="/comments/create" method="post">
-    <textarea name="text" placeholder="Add your comment here" ></textarea>
+    <textarea name="text" placeholder="在这里输入评论" ></textarea>
     <input type="hidden" name="story_id" value="{{.story.Id}}">
     {{ if .comment.Id }}
     <input type="hidden" name="parent_id" value="{{.comment.Id}}">
     {{ end }}
-    <input type=submit value="Add Comment" class="button right">
+    <input type=submit value="添加评论" class="button right">
     <input name="authenticity_token" type="hidden" value="{{.authenticity_token}}">
 </form>

@@ -162,7 +162,7 @@ func HandleIndex(context router.Context) error {
 
 func setStoriesMetadata(view *view.Renderer, request *http.Request) {
 	view.AddKey("pubdate", time.Now()) // could use latest story date instead?
-	view.AddKey("meta_title", "游戏圈儿")
+	//view.AddKey("meta_title", "游戏圈儿")
 	view.AddKey("meta_desc", "最新最热的游戏圈动态")
 	view.AddKey("meta_keywords", "游戏, 游戏开发, 新游戏, 游戏策划, 游戏运营, 游戏上线")
 

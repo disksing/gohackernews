@@ -194,7 +194,7 @@ func (m *Story) Domain() string {
 		return m.Url
 	}
 
-	return "GN"
+	return "YXQ"
 }
 
 // ShowAsk returns true if this is a Show: or Ask: story

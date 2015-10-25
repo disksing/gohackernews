@@ -42,7 +42,7 @@ func HandleIndex(context router.Context) error {
 	view := view.New(context)
 	view.AddKey("filter", filter)
 	view.AddKey("comments", results)
-	view.AddKey("meta_title", "Comments")
+	view.AddKey("meta_title", "站内评论")
 
 	return view.Render()
 

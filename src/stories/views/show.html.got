@@ -21,7 +21,7 @@
              {{ if exists .story.VetURL }}
                <a href="{{.story.VetURL}}" class="domain docs">goreportcard.com</a>
              {{ end }}
-             <a href="/users/{{.story.UserId}}">posted by {{.story.UserName}}</a> {{timeago .story.CreatedAt }} &nbsp; 
+             <a href="/users/{{.story.UserId}}">{{.story.UserName}}</a> {{timeago .story.CreatedAt }} &nbsp; 
          </div>
          
          <div class="actions">

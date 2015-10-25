@@ -24,7 +24,7 @@ func HandleCreateShow(context router.Context) error {
 	view := view.New(context)
 	story := stories.New()
 	view.AddKey("story", story)
-	view.AddKey("meta_title", "Go Hacker News Submit")
+	view.AddKey("meta_title", "提交链接")
 
 	return view.Render()
 }
@@ -40,7 +40,7 @@ func HandleCreate(context router.Context) error {
 
 	// Check permissions - if not logged in and above 1 points, redirect to error
 	if !authorise.CurrentUser(context).CanSubmit() {
-		return router.NotAuthorizedError(nil, "Sorry", "You need to be registered and have more than 1 points to submit stories.")
+		return router.NotAuthorizedError(nil, "抱歉", "你需要注册并拥有至少1点积分。")
 	}
 
 	// Get params

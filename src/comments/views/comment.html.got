@@ -2,14 +2,15 @@
     <div class="metadata">
     <a href="/comments/{{.comment.Id}}/upvote" method="post" class="vote {{if not .current_user.CanUpvote }}disabled{{ end }}">▲</a>
     {{ if (.current_user.Admin) or (eq .comment.UserId .current_user.Id) }}
-      {{ .comment.Points }}分
+      ({{ .comment.Points }})
     {{ end }}
-    {{ if not .story }}
-    comment posted on <a href="/stories/{{.comment.StoryId}}">{{.comment.StoryName}}</a> by 
-    {{ end}}
-    <a href="/users/{{.comment.UserId}}">{{.comment.UserName}}</a> 
-    <a href="/comments/{{.comment.Id}}">{{timeago .comment.CreatedAt}}</a>
     <a href="/comments/{{.comment.Id}}/downvote" method="post" class="vote {{if not .current_user.CanDownvote }}disabled{{ end }}">▼</a>
+
+    {{ if not .story }}
+    <a href="/stories/{{.comment.StoryId}}">{{.comment.StoryName}}</a>
+    {{ end}}
+    <a href="/users/{{.comment.UserId}}">{{.comment.UserName}}</a>
+    <a href="/comments/{{.comment.Id}}">{{timeago .comment.CreatedAt}}</a>
     </div>
     
     
@@ -20,7 +21,7 @@
     {{ if .current_user.CanComment }}
 
     {{ if (.story) and (ne .comment.UserId .current_user.Id) }}
-      <a href="#" class="show button small grey reply" data-show="#comment{{.comment.Id}} .reply-form">reply</a>
+      <a href="#" class="show button small grey reply" data-show="#comment{{.comment.Id}} .reply-form">评论</a>
     {{ end }}
     
     {{ if (.current_user.Admin) or (eq .comment.UserId .current_user.Id) }}
