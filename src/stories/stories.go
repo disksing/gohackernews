@@ -11,6 +11,16 @@ import (
 	"github.com/fragmenta/model/validate"
 	"github.com/fragmenta/query"
 	"github.com/fragmenta/router"
+	"github.com/fragmenta/view/helpers"
+)
+
+const (
+	CategoryDesign    = 10
+	CategoryTech      = 20
+	CategoryArt       = 30
+	CategoryProduct   = 40
+	CategoryMarketing = 50
+	CategoryHiring    = 60
 )
 
 // Story handles saving and retreiving stories from the database
@@ -20,6 +30,7 @@ type Story struct {
 	Name    string
 	Summary string
 	Url     string
+	Category   int64
 	Rank    int64
 	Points  int64
 
@@ -30,12 +41,12 @@ type Story struct {
 
 // AllowedParams returns an array of allowed param keys
 func AllowedParams() []string {
-	return []string{"name", "points", "summary", "url"}
+	return []string{"name", "points", "summary", "url", "category"}
 }
 
 // AllowedParamsAdmin returns an array of allowed param keys
 func AllowedParamsAdmin() []string {
-	return []string{"status", "user_id", "user_name", "name", "points", "summary", "url", "comment_count"}
+	return []string{"status", "user_id", "user_name", "name", "points", "summary", "url", "category", "comment_count"}
 }
 
 // NewWithColumns creates a new story instance and fills it with data from the database cols provided
@@ -49,6 +60,7 @@ func NewWithColumns(cols map[string]interface{}) *Story {
 	story.Name = validate.String(cols["name"])
 	story.Summary = validate.String(cols["summary"])
 	story.Url = validate.String(cols["url"])
+	story.Category = validate.Int(cols["category"])
 	story.Rank = validate.Int(cols["rank"])
 	story.Points = validate.Int(cols["points"])
 
@@ -273,4 +285,15 @@ func (m *Story) Tags() []string {
 	// 	tags = parts[1:]
 	// }
 	return tags
+}
+
+func (m *Story) CategoryOptions() []helpers.Option {
+	return []helpers.Option{
+		{Id: CategoryDesign, Name: "策划"},
+		{Id: CategoryTech, Name: "程序"},
+		{Id: CategoryArt, Name: "美术"},
+		{Id: CategoryProduct, Name: "产品"},
+		{Id: CategoryMarketing, Name: "市场"},
+		{Id: CategoryHiring, Name: "工作机会"},
+	}
 }

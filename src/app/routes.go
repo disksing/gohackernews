@@ -17,10 +17,16 @@ func setupRoutes(r *router.Router) {
 	// Add the home page route
 	r.Add("/", storyactions.HandleHome)
 	r.Add("/stories/{id:[0-9]+}", storyactions.HandleShow)
+	r.Add("/stories/design", storyactions.HandleDesign)
+	r.Add("/stories/tech", storyactions.HandleTech)
+	r.Add("/stories/art", storyactions.HandleArt)
+	r.Add("/stories/product", storyactions.HandleProduct)
+	r.Add("/stories/marketing", storyactions.HandleMarketing)
+	r.Add("/stories/hiring", storyactions.HandleHiring)
 
 	r.Add("/stories/create", storyactions.HandleCreateShow)
 	r.Add("/stories/create", storyactions.HandleCreate).Post()
-	r.Add("/stories/code{format:(.xml)?}", storyactions.HandleCode)
+	//r.Add("/stories/code{format:(.xml)?}", storyactions.HandleCode)
 	r.Add("/index{format:(.xml)?}", storyactions.HandleIndex)
 	r.Add("/stories{format:(.xml)?}", storyactions.HandleIndex)
 	r.Add("/stories/{id:[0-9]+}/update", storyactions.HandleUpdateShow)

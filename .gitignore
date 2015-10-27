@@ -9,3 +9,5 @@ src/app/assets/scripts/analytics.js
 public/assets
 
 2015-10-24-040022-Create-Database.sql
+
+.DS_Store

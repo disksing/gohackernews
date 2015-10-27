@@ -8,6 +8,7 @@
     <div class="wide-fields">
     {{ field "链接URL" "url" .story.Url "class=active_url_field"}}
     {{ field "标题" "name" .story.Name "class=active_name_field" }}
+    {{ select "分类" "category" .story.Category .story.CategoryOptions}}
     {{ textarea "简介" "summary" .story.Summary }}
     </div>
     <input name="authenticity_token" type="hidden" value="{{.authenticity_token}}">

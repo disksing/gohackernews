@@ -34,12 +34,12 @@
   <ul class="sections">
     <li class="long"><a href="http://yxq.news">游戏圈儿</a></li>
     <li><a title="游戏圈动态" href="/stories">最新</a></li>
-    <li><a title="游戏策划" href="/stories?q=Design:">策划</a></li>
-    <li><a title="游戏技术" href="/stories?q=Tech:">程序</a></li>
-    <li><a title="游戏美术" href="/stories?q=Art:">美术</a></li>
-    <li><a title="游戏运营" href="/stories?q=Product:">产品</a></li>
-    <li><a title="游戏市场" href="/stories?q=Marketing:">市场</a></li>
-    <li><a title="游戏公司工作机会" href="/stories?q=Hiring:">工作机会</a></li>
+    <li><a title="游戏策划" href="/stories/design">策划</a></li>
+    <li><a title="游戏技术" href="/stories/tech">程序</a></li>
+    <li><a title="游戏美术" href="/stories/art">美术</a></li>
+    <li><a title="游戏运营" href="/stories/product">产品</a></li>
+    <li><a title="游戏市场" href="/stories/marketing">市场</a></li>
+    <li><a title="游戏公司工作机会" href="/stories/hiring">工作机会</a></li>
     <li><a title="站内评论" href="/comments">评论</a></li>
     {{ if not .current_user.Anon }}
     <li class="submit"><a href="/stories/create" title="提交游戏圈新链接">提交</a></li>

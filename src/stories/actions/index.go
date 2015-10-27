@@ -52,16 +52,37 @@ func HandleHome(context router.Context) error {
 
 }
 
-// HandleCode displays a list of stories linking to repos (github etc) using gravity to order them
-// responds to GET /stories/code
-func HandleCode(context router.Context) error {
+func HandleDesign(context router.Context) error {
+	return handleCategory(context, stories.CategoryDesign)
+}
+
+func HandleTech(context router.Context) error {
+	return handleCategory(context, stories.CategoryTech)
+}
+
+func HandleArt(context router.Context) error {
+	return handleCategory(context, stories.CategoryArt)
+}
+
+func HandleProduct(context router.Context) error {
+	return handleCategory(context, stories.CategoryProduct)
+}
+
+func HandleMarketing(context router.Context) error {
+	return handleCategory(context, stories.CategoryMarketing)
+}
+
+func HandleHiring(context router.Context) error {
+	return handleCategory(context, stories.CategoryHiring)
+}
+
+func handleCategory(context router.Context, category int64) error {
 
 	// Build a query
-	q := stories.Query().Where("points > -6").Order("rank desc, points desc, id desc").Limit(listLimit)
+	q := stories.Query().Limit(listLimit)
 
-	// Restrict to stories with have a url starting with github.com or bitbucket.org
-	// other code repos can be added later
-	q.Where("url ILIKE 'https://github.com%'").OrWhere("url ILIKE 'https://bitbucket.org'")
+	// Select
+	q.Where("points > 0 AND category = ?", category).Order("rank desc, points desc, id desc")
 
 	// Set the offset in pages if we have one
 	page := int(context.ParamInt("page"))
@@ -80,11 +101,6 @@ func HandleCode(context router.Context) error {
 	setStoriesMetadata(view, context.Request())
 	view.AddKey("page", page)
 	view.AddKey("stories", results)
-	//	view.AddKey("tags", []string{"web", "mobile", "data", "email", "crypto", "data", "graphics", "ui", "security"})
-
-	// TODO: remove these calls and put in a filter
-	// - given it is not too expensive, we could just generate tokens on every request
-
 	view.Template("stories/views/index.html.got")
 
 	if context.Param("format") == ".xml" {
@@ -93,8 +109,51 @@ func HandleCode(context router.Context) error {
 	}
 
 	return view.Render()
-
 }
+
+// HandleCode displays a list of stories linking to repos (github etc) using gravity to order them
+// responds to GET /stories/code
+// func HandleCode(context router.Context) error {
+
+// 	// Build a query
+// 	q := stories.Query().Where("points > -6").Order("rank desc, points desc, id desc").Limit(listLimit)
+
+// 	// Restrict to stories with have a url starting with github.com or bitbucket.org
+// 	// other code repos can be added later
+// 	q.Where("url ILIKE 'https://github.com%'").OrWhere("url ILIKE 'https://bitbucket.org'")
+
+// 	// Set the offset in pages if we have one
+// 	page := int(context.ParamInt("page"))
+// 	if page > 0 {
+// 		q.Offset(listLimit * page)
+// 	}
+
+// 	// Fetch the stories
+// 	results, err := stories.FindAll(q)
+// 	if err != nil {
+// 		return router.InternalError(err)
+// 	}
+
+// 	// Render the template
+// 	view := view.New(context)
+// 	setStoriesMetadata(view, context.Request())
+// 	view.AddKey("page", page)
+// 	view.AddKey("stories", results)
+// 	//	view.AddKey("tags", []string{"web", "mobile", "data", "email", "crypto", "data", "graphics", "ui", "security"})
+
+// 	// TODO: remove these calls and put in a filter
+// 	// - given it is not too expensive, we could just generate tokens on every request
+
+// 	view.Template("stories/views/index.html.got")
+
+// 	if context.Param("format") == ".xml" {
+// 		view.Layout("")
+// 		view.Template("stories/views/index.xml.got")
+// 	}
+
+// 	return view.Render()
+
+// }
 
 // HandleIndex displays a list of stories at /stories
 func HandleIndex(context router.Context) error {
